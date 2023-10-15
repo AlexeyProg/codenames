@@ -11,7 +11,7 @@ static int black_counter = 0;
 HeroButton::HeroButton()
 {
     this->setMaximumHeight(50);
-    this->setMaximumWidth(150);
+    this->setMaximumWidth(160);
     generateName();
     generateColor();
     QFont font;
@@ -23,6 +23,7 @@ void HeroButton::generateName()
 {
     int ind = QRandomGenerator::global()->bounded(list_names.size());
     own_name = list_names[ind];
+    list_names.remove(ind);
 }
 
 void HeroButton::generateColor()
